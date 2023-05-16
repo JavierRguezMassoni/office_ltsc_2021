@@ -1,0 +1,38 @@
+Activación CMD (KMS)
+Sigue estos pasos para activar Office 2021 mediante CMD utilizando las licencias por volumen KMS:
+
+Ejecuta el símbolo del sistema (CMD) como administrador. Para ello, presiona la tecla Windows, escribe CMD, clic derecho sobre la aplicación Símbolo del sistema y haz clic en “Ejecutar como administrador”.
+Copia y pega el siguiente comando en la consola. Recuerda presionar Enter para ejecutar el comando.
+cd /d %ProgramFiles(x86)%\Microsoft Office\Office16
+cd /d %ProgramFiles%\Microsoft Office\Office16
+Este comando ingresa al directorio de Office en CMD, que dependerá de la arquitectura de tu sistema operativo (32 o 64 bits). Para evitar complicaciones, ejecuta ambos comandos. Uno mostrará error, pero el otro se ejecutará correctamente.
+
+3. Ahora ejecuta este otro comando para instalar la licencia por volumen de Office 2021.
+
+for /f %x in ('dir /b ..\root\Licenses16\ProPlus2021VL_KMS*.xrm-ms') do cscript ospp.vbs /inslic:"..\root\Licenses16\%x"
+4. Finalmente, activa Office con la clave KMS ejecutando el siguiente comando. Recuerda estar conectado a Internet para que funcione.
+
+cscript ospp.vbs /setprt:1688
+cscript ospp.vbs /unpkey:6F7TH >nul
+cscript ospp.vbs /inpkey:FXYTK-NJJ8C-GB6DW-3DYQT-6F7TH
+cscript ospp.vbs /sethst:e8.us.to
+cscript ospp.vbs /act
+¡Eso es todo!
+
+En caso de que obtengas el error 0xC004F074, solo intenta nuevamente. Este error se muestra cuando hay problemas con el servidor o con tu conexión a Internet.
+
+
+        Producto	                      Licencia Office 2021
+Office LTSC Professional Plus 2021	FXYTK-NJJ8C-GB6DW-3DYQT-6F7TH
+Office LTSC Standard 2021	          KDX7X-BNVR8-TXXGX-4Q7Y8-78VT3
+Project Professional 2021	          FTNWT-C6WBT-8HMGF-K9PRX-QV9H8
+Project Standard 2021	              J2JDC-NJCYY-9RGQ4-YXWMH-T3D4T
+Visio LTSC Professional 2021	      KNH8D-FGHT4-T8RK3-CTDYJ-K2HT4
+Visio LTSC Standard 2021	          MJVNY-BYWPY-CWV6J-2RKRT-4M8QG
+Access LTSC 2021	                  WM8YG-YNGDD-4JHDC-PG3F4-FC4T4
+Excel LTSC 2021	                    NWG3X-87C9K-TC7YY-BC2G7-G6RVC
+Outlook LTSC 2021	                  C9FM6-3N72F-HFJXB-TM3V9-T86R9
+PowerPoint LTSC 2021              	TY7XF-NFRBR-KJ44C-G83KF-GX27K
+Publisher LTSC 2021               	2MW9D-N4BXM-9VBPG-Q7W6M-KFBGQ
+Skype for Business LTSC 2021	      HWCXN-K3WBT-WJBKY-R8BD9-XK29P
+Word LTSC 2021	                    TN8H9-M34D3-Y64V9-TR72V-X79KV
